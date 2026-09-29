@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="min-h-screen flex flex-col items-center justify-center gap-10">
-    <img src="{{ Vite::asset('resources/images/rafly.jpeg') }}" alt="my" class="w-34 h-34 rounded-full border object-cover" />
+    <img src="{{ asset('images/rafly.jpeg') }}" alt="my" class="w-34 h-34 rounded-full border object-cover" />
     <div class="space-y-2 w-40">
         <div class="w-full py-2 bg-gray-400 text-center">
             {{ $nama }}
