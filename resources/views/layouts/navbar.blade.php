@@ -84,6 +84,11 @@
                 </a>
             </li>
             <li>
+                <a href="{{ url('/matakuliah') }}" class="navbar-link {{ request()->is('user') ? 'active' : '' }}">
+                    List Mata Kuliah
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('user.create') }}" class="navbar-link {{ request()->is('user/create') ? 'active' : '' }}">
                     Tambah Pengguna
                 </a>
