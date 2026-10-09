@@ -110,7 +110,7 @@
                 <td>{{ $mk->nama_mk }}</td>
                 <td>{{ $mk->sks }}</td>
                 <td class="aksi-btn">
-                    <a href="{{ route('matakuliah.update', $mk->id) }}" class="btn btn-edit">Edit</a>
+                    <a href="{{ route('matakuliah.edit', $mk->id) }}" class="btn btn-edit">Edit</a>
                     <form action="{{ route('matakuliah.destroy', $mk->id) }}" method="POST">
                         @csrf
                         @method('DELETE')

@@ -54,6 +54,60 @@
         color: #94a3b8;
         font-size: 0.95rem;
     }
+
+    .aksi-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        cursor: pointer;
+        font-weight: 500;
+        border: 1px solid transparent;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .btn-edit {
+        background-color: #f7e30530;
+        color: #000;
+        border: 1px solid #f7e305 ;
+        transition: .3s ease;
+    }
+
+    .btn-edit:hover {
+        background-color: #f7e305c1;
+    }
+
+    .btn-hapus {
+        background-color: #f7050530;
+        color: #f70505fd;
+        border: 1px solid #f70505fd;
+        transition: .3s ease;
+    }
+
+    .btn-hapus:hover {
+        color: #fff;
+        background-color: #f70505c6;
+    }
+
+    .btn-tambah {
+        background-color: #0529f730;
+        color: #1505f7;
+        border: 1px solid #1505f7 ;
+        transition: .3s ease;
+    }
+
+    .btn-tambah:hover {
+        color: #fff;
+        background-color: #0529f7be;
+    }
 </style>
 
 <div class="table-container">
@@ -64,6 +118,7 @@
                 <th>Nama</th>
                 <th>NPM</th>
                 <th>Kelas</th>
+                <th style="text-align: center;">Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -74,6 +129,14 @@
                     <td>{{ $user->nim }}</td>
                     <td>
                         <span class="badge-kelas">{{ $user->nama_kelas }}</span>
+                    </td>
+                    <td class="aksi-btn">
+                        <a href="{{ route('user.edit', $user->id) }}" class="btn btn-edit">Edit</a>
+                        <form action="{{ route('user.destroy', $user->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-hapus" type="submit" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">Hapus</button>
+                        </form>
                     </td>
                 </tr>
             @empty

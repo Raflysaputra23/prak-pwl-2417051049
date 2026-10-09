@@ -42,6 +42,27 @@
         margin-top: 4px;
         margin-bottom: 0;
     }
+
+    .alert {
+        padding: 12px 14px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .alert-success {
+        border: 1px solid #00ff3cb0;
+        border-left: 4px solid #00ff3c;
+        color: #00ff3c;
+        background-color: #00ff3c29;
+    }
+
+    .alert-error {
+        border: 1px solid #ff0000b0;
+        border-left: 4px solid #ff0000;
+        color: #ff0000;
+        background-color: #ff000029;
+    }
 </style>
 
 <div class="list-wrapper">
@@ -52,7 +73,12 @@
                 <p class="list-subtitle">Data seluruh pengguna yang telah tersimpan</p>
             </div>
         </div>
-
+         @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @elseif (session('error'))
+            <div class="alert alert-error">{{ session('error') }}</div>
+        @endif
+        
         @include('components.table', ['items' => $users])
     </div>
 </div>
