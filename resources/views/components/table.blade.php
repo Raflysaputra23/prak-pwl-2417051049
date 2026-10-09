@@ -114,7 +114,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th style="width: 70px;">ID</th>
+                <th style="width: 200px;">ID</th>
                 <th>Nama</th>
                 <th>NPM</th>
                 <th>Kelas</th>
