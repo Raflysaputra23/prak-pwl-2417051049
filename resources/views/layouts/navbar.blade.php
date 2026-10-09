@@ -84,7 +84,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('/matakuliah') }}" class="navbar-link {{ request()->is('user') ? 'active' : '' }}">
+                <a href="{{ url('/matakuliah') }}" class="navbar-link {{ request()->is('matakuliah') ? 'active' : '' }}">
                     List Mata Kuliah
                 </a>
             </li>
